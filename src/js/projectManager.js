@@ -15,8 +15,19 @@ export default class ProjectManager {
     return project;
   }
 
-  getProject(id){
-    return this.projects.find(project => project.id === parseInt(id));
+  getProject(id) {
+    const project = this.projects.find(project => project.id === parseInt(id));
+    if (project) {
+      return Project.fromJSON(project);
+    }
+    return null;
+  }
+
+  updateProject(updatedProject) {
+    const index = this.projects.findIndex(p => p.id === updatedProject.id);
+    if (index !== -1) {
+      this.projects[index] = updatedProject;
+    }
   }
 
   get projects() {

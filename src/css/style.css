@@ -1,3 +1,10 @@
+body{
+  /* margin: 0; */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: center;
+}
+
 p{
   color: red;
   list-style: none;
